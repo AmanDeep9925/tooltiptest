@@ -21,6 +21,28 @@ code {
   /* color: w */
 }
 
+/* * Menu container */
+
+.menu-container{
+  width :  40%;
+  border:2px solid black;
+  margin : auto;
+  margin-top : 100px;
+  display:flex;
+  justify-content : space-evenly;
+  align-items:center;
+  transform: skew(20deg);
+}
+
+.menu-container h4{
+  text-align:center;
+  transform: skew(-20deg);
+}
+.menu-container select{
+  text-align:center;
+  transform: skew(-20deg);
+}
+
 /* * Tool Tip sections */
 
 /* * Top Section */
@@ -29,10 +51,12 @@ code {
   /* border: 2px solid red; */
   width: 60%;
   margin: auto;
-  margin-top: 150px;
+  margin-top: 70px;
   height: auto;
   text-align: center;
 }
+
+
 
 .social-icons {
   display: flex;
@@ -60,31 +84,107 @@ code {
   background-color: #3b5a9b;
 }
 
-#twitter,.tooltip-twitter {
-  background-color: #2b97f1;
-}
-#github,.tooltip-github {
-  background-color: #000;
-}
-
-#gmail,.tooltip-gmail {
-  background-color: #c71610;
-}
-
-#linkedin,.tooltip-linkedin {
-  background-color: #006599;
-}
-
-
-
 .social-icon {
   color: white;
 }
 
 /* * Tooltip */
-.tooltip {
+.top-tooltip {
   position: absolute;
   top: -55px;
+  left:-10px;
+  /* border: 2px solid black; */
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  padding: 0.5em 0 0 0;
+  color: white;
+  /* opacity: 0; */
+  /* background-color: black */
+  z-index: 2;
+}
+
+.top-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 35px;
+  width: 0.5px;
+  height:0.5px;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  padding: 0.5em 0 0 0;
+  color: white;
+  opacity : 1;
+  background-color: black;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.left-tooltip {
+  position: absolute;
+  top:20px;
+  left:-120px;
+  /* border: 2px solid black; */
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  padding: 0.5em 0 0 0;
+  color: white;
+  /* background-color: black */
+  z-index: 2;
+}
+
+.left-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 8.5px;
+  left: 83px;
+  width: 0.5px;
+  height:0.5px;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  padding: 0.5em 0 0 0;
+  color: white;
+  background-color: black;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+.right-tooltip {
+  position: absolute;
+  top:20px;
+  left:95px;
+  /* border: 2px solid black; */
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  padding: 0.5em 0 0 0;
+  color: white;
+  /* background-color: black */
+  z-index: 2;
+}
+
+.right-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  width: 0.5px;
+  height:0.5px;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  padding: 0.5em 0 0 0;
+  color: white;
+  background-color: black;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+.bottom-tooltip {
+  position: absolute;
+  top: 100px;
   left:-10px;
   /* border: 2px solid black; */
   width: 100px;
@@ -96,11 +196,11 @@ code {
   z-index: 2;
 }
 
-.tooltip::after {
+.bottom-tooltip::after {
   content: "";
   position: absolute;
-  top: 28px;
-  left: 35px;
+  top: -2px;
+  left: 40px;
   width: 0.5px;
   height:0.5px;
   border: solid;
@@ -113,24 +213,14 @@ code {
   z-index: -1;
 }
 
+
+
+
 .tooltip-facebook::after{
   background-color: #3b5a9b;
 }
 
-.tooltip-twitter::after{
-  background-color: #2b97f1;
-}
-.tooltip-github::after{
-  background-color: #000;
-}
 
-.tooltip-gmail::after{
-  background-color: #c71610;
-}
-
-.tooltip-linkedin::after{
-  background-color: #006599;
-}
 
 .none{
   display: none;

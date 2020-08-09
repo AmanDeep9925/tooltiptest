@@ -6,35 +6,46 @@ class App extends React.Component {
 
   constructor() {
     super();
+    this.select = React.createRef();
+
     this.state = {
-        showTooltip: false
+      position : ''
     }
 }
 
-handleMouseEnter = () => {
+handleChange = () => {
 
     this.setState({
-        showTooltip: true
+        position : this.select.current.value
     })
 }
 
-handleMouseLeave = () => {
-    this.setState({
-        showTooltip: false
-    })
-}
+
 
   render() {
-    const display = this.state.showTooltip ? 'show' : 'none';
+
     return (
       <div>
         <div className="App">
           <h2> Tooltip components</h2>
         </div>
-        {/* <TopSocial /> */}
-        <TopSocial handleMouseEnter = {this.handleMouseEnter} handleMouseLeave = {this.handleMouseLeave} display={display}/>
-        {/* <BottomSocial handleMouseEnter = {this.handleMouseEnter} handleMouseLeave = {this.handleMouseLeave} display={display}/> */}
-        {/* <LeftSocial handleMouseEnter = {this.handleMouseEnter} handleMouseLeave = {this.handleMouseLeave} display={display}/> */}
+
+        <div className="menu-container">
+          <h4>Position : </h4>
+          <select name="position"
+                  ref = {this.select}
+                  onChange = {this.handleChange}
+          >
+          <option value="option">Select Position</option>
+          <option value="top">Top</option>
+            <option value="bottom">Bottom</option>
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+          </select>
+        </div>
+
+        <TopSocial position={this.state.position}/>
+
       </div>
     );
   }
