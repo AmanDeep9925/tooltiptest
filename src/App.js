@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TopSocial from './components/TopSocial';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+  constructor() {
+    super();
+    this.state = {
+        showTooltip: false
+    }
+}
+
+handleMouseEnter = () => {
+
+    this.setState({
+        showTooltip: true
+    })
+}
+
+handleMouseLeave = () => {
+    this.setState({
+        showTooltip: false
+    })
+}
+
+  render() {
+    const display = this.state.showTooltip ? 'show' : 'none';
+    return (
+      <div>
+        <div className="App">
+          <h2> Tooltip components</h2>
+        </div>
+        {/* <TopSocial /> */}
+        <TopSocial handleMouseEnter = {this.handleMouseEnter} handleMouseLeave = {this.handleMouseLeave} display={display}/>
+        {/* <BottomSocial handleMouseEnter = {this.handleMouseEnter} handleMouseLeave = {this.handleMouseLeave} display={display}/> */}
+        {/* <LeftSocial handleMouseEnter = {this.handleMouseEnter} handleMouseLeave = {this.handleMouseLeave} display={display}/> */}
+      </div>
+    );
+  }
 }
 
 export default App;

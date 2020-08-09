@@ -1,13 +1,141 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "fira code";
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* * App component */
+
+.App {
+  text-align: center;
+  border: 1px solid black;
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+  transform: skew(-20deg);
+  background: linear-gradient(to right, #50c9c3, #96deda);
+  /* color: w */
+}
+
+/* * Tool Tip sections */
+
+/* * Top Section */
+
+.top-container {
+  /* border: 2px solid red; */
+  width: 60%;
+  margin: auto;
+  margin-top: 150px;
+  height: auto;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.social-icon-container {
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 100%;
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+
+.social-icon {
+  position: relative;
+  top: 15px;
+  font-size: 45px;
+}
+
+#facebook,.tooltip-facebook{
+  background-color: #3b5a9b;
+}
+
+#twitter,.tooltip-twitter {
+  background-color: #2b97f1;
+}
+#github,.tooltip-github {
+  background-color: #000;
+}
+
+#gmail,.tooltip-gmail {
+  background-color: #c71610;
+}
+
+#linkedin,.tooltip-linkedin {
+  background-color: #006599;
+}
+
+
+
+.social-icon {
+  color: white;
+}
+
+/* * Tooltip */
+.tooltip {
+  position: absolute;
+  top: -55px;
+  left:-10px;
+  /* border: 2px solid black; */
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  padding: 0.5em 0 0 0;
+  color: white;
+  /* background-color: black */
+  z-index: 2;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 35px;
+  width: 0.5px;
+  height:0.5px;
+  border: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: transparent;
+  padding: 0.5em 0 0 0;
+  color: white;
+  background-color: black;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.tooltip-facebook::after{
+  background-color: #3b5a9b;
+}
+
+.tooltip-twitter::after{
+  background-color: #2b97f1;
+}
+.tooltip-github::after{
+  background-color: #000;
+}
+
+.tooltip-gmail::after{
+  background-color: #c71610;
+}
+
+.tooltip-linkedin::after{
+  background-color: #006599;
+}
+
+.none{
+  display: none;
+}
+
+.show{
+  display: inline;
 }
